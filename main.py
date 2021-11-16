@@ -16,7 +16,7 @@ count_coins = int(f.read())
 run = True
 menu = Menu(window)
 pygame.mixer.music.load('data/music.ogg')
-pygame.mixer.music.set_volume(0.8)
+pygame.mixer.music.set_volume(0.4)
 pygame.mixer.music.play(-1)
 click_sound = pygame.mixer.Sound('data/spell3.wav')
 click_sound.set_volume(0.05)
