@@ -1,7 +1,7 @@
 import pygame
 from menu import Menu
-from level_selection import level_selection
-from score_table import score_table
+from levelselection import LevelSelection
+from scoretable import ScoreTable
 from quiz import Quiz
 from database import questions_easy, questions_normal, questions_hard
 import random
@@ -22,8 +22,8 @@ click_sound = pygame.mixer.Sound('data/spell3.wav')
 click_sound.set_volume(0.05)
 click_sound_wrong = pygame.mixer.Sound('data/error.ogg')
 click_sound_wrong.set_volume(0.2)
-Level_selection = level_selection(window)
-Score_table = score_table(window)
+Level_selection = LevelSelection(window)
+Score_table = ScoreTable(window)
 random.shuffle(questions_easy)
 random.shuffle(questions_normal)
 random.shuffle(questions_hard)

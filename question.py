@@ -1,4 +1,4 @@
-def CheckPosition(x, y):
+def check_position(x, y):
     for i in range(4):
         if 50 < x < 500 and 400 + 70 * i < y < 470 + 70 * i:
             return i + 1
@@ -13,5 +13,5 @@ class Question:
         self.answers = answers
         self.cost = cost
 
-    def CheckAnswer(self, answer):
+    def check_answer(self, answer):
         return answer == self.right_answer

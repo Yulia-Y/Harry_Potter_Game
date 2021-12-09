@@ -2,7 +2,7 @@ import pygame
 import sys
 
 
-class score_table:
+class ScoreTable:
     background = pygame.image.load('data/score_background.jpg')
 
     def __init__(self, window):

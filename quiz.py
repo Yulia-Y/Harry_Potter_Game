@@ -1,9 +1,7 @@
 import pygame
 import sys
 
-from pygame.mixer import Sound
-
-from question import CheckPosition
+from question import check_position
 import random
 
 
@@ -30,12 +28,12 @@ class Quiz:
     count_coins = 0
     time = 0
 
-    def __init__(self, window, questions, state, High_score, click_sound, click_sound_wrong):
+    def __init__(self, window, questions, state, high_score, click_sound, click_sound_wrong):
         self.questions = questions
         self.count_questions = len(questions)
         self.window = window
         self.state = state
-        self.High_score = High_score
+        self.high_score = high_score
         self.click_sound = click_sound
         self.click_sound_wrong = click_sound_wrong
 
@@ -119,8 +117,8 @@ class Quiz:
                     self.count_heart += 1
                     self.count_coins -= 25
                     coins_rewrite(str(self.count_coins))
-                elif CheckPosition(x, y):
-                    if self.questions[self.number_question].CheckAnswer(CheckPosition(x, y)):
+                elif check_position(x, y):
+                    if self.questions[self.number_question].check_answer(check_position(x, y)):
                         self.count_coins += 5
                         coins_rewrite(str(self.count_coins))
                         self.score += (1200 - self.time) // 60
@@ -144,10 +142,10 @@ class Quiz:
         return state
 
     def check_score(self):
-        hs = open(self.High_score)
+        hs = open(self.high_score)
         high_score = hs.read()
         if self.score > int(high_score):
-            hs = open(self.High_score, 'w')
+            hs = open(self.high_score, 'w')
             hs.write(str(self.score))
 
     def reload(self):

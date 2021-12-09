@@ -2,7 +2,7 @@ import pygame
 import sys
 
 
-class level_selection:
+class LevelSelection:
     coin = [pygame.image.load('data/coin/star coin 1.png'), pygame.image.load('data/coin/star coin 2.png'),
             pygame.image.load('data/coin/star coin 3.png'), pygame.image.load('data/coin/star coin 4.png'),
             pygame.image.load('data/coin/star coin 5.png'), pygame.image.load('data/coin/star coin 6.png')]
